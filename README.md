@@ -11,4 +11,3 @@ Renommer le fichier **.env.simple** en **.env** et fournir une valeur pour chaqu
 ## Utilier le Makefile
 
 Utiliser la commande `make build-up` pour lancer le projet.# starter_docker_nginx_php
-# starter_docker_nginx_php
