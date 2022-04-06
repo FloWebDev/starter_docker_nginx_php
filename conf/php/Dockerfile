@@ -21,6 +21,11 @@ RUN apk add --no-cache --virtual build-essentials \
 RUN apk add --no-cache libssh2-dev autoconf build-base
 RUN pecl install ssh2-1.3.1 && docker-php-ext-enable ssh2
 
+RUN pecl install xdebug-3.1.3 \
+    && docker-php-ext-enable xdebug \
+    && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
 RUN wget https://getcomposer.org/composer-stable.phar -O /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 
 RUN apk add --no-cache tzdata

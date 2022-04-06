@@ -35,7 +35,7 @@ mysql-sh:
 
 ## launch the web app server
 serve:
-	docker-compose exec php-fpm /usr/local/bin/php /var/www/html/basic/yii serve 0.0.0.0:8080
+	docker-compose exec php-fpm /usr/local/bin/php -S 0.0.0.0:8080 -d /var/www/html/
 
 ## remove all Docker containers and images
 remove-all:

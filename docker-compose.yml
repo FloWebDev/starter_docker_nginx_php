@@ -20,8 +20,10 @@ services:
     ports:
         - "8080:8080"
     volumes:
-        - ./src:/var/www/html
-        - ./log/php:/var/log/php/
+      - ./src:/var/www/html
+      - ./log/php:/var/log/php/
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   mysql:
     image: mysql:8.0.26
